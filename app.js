@@ -84,14 +84,8 @@ function game(userChoice) {
   }
 }
 
-$rock.addEventListener("click", () => {
-  game("ROCK");
-});
+$rock.addEventListener("click", () => game("ROCK"));
 
-$paper.addEventListener("click", () => {
-  game("PAPER");
-});
+$paper.addEventListener("click", () => game("PAPER"));
 
-$scissors.addEventListener("click", () => {
-  game("SCISSORS");
-});
+$scissors.addEventListener("click", () => game("SCISSORS"));
