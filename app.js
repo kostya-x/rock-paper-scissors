@@ -14,20 +14,52 @@ function getComputerChoice() {
   return choices[computerChoice];
 }
 
+function cleanChoice(userChoice) {
+  setTimeout(() => {
+    const choice = document.querySelector(`.${userChoice.toLowerCase()}`);
+    choice.style.borderColor = "";
+    choice.style.boxShadow = "";
+  }, 300);
+}
+
+function addWinGlow(userChoice) {
+  const choice = document.querySelector(`.${userChoice.toLowerCase()}`);
+  choice.style.borderColor = "#10bc40";
+  choice.style.boxShadow = "0 0 10px #10bc40";
+  cleanChoice(userChoice);
+}
+
+function addLoseGlow(userChoice) {
+  const choice = document.querySelector(`.${userChoice.toLowerCase()}`);
+  choice.style.borderColor = "#830900";
+  choice.style.boxShadow = "0 0 10px #830900";
+  cleanChoice(userChoice);
+}
+
+function addDrawGlow(userChoice) {
+  const choice = document.querySelector(`.${userChoice.toLowerCase()}`);
+  choice.style.borderColor = "#1f4daa";
+  choice.style.boxShadow = "0 0 10px #1f4daa";
+  cleanChoice(userChoice);
+}
+
 function win(userChoice, computerChoice) {
   userScore++;
   $userScore.textContent = userScore;
   $resultText.textContent = `${userChoice} beats ${computerChoice}. You WIN!`;
+  addWinGlow(userChoice);
 }
 
 function lose(userChoice, computerChoice) {
   compScore++;
   $compScore.textContent = compScore;
   $resultText.textContent = `${computerChoice} beats ${userChoice}. You LOSE!`;
+  addLoseGlow(userChoice);
 }
 
 function draw(userChoice, computerChoice) {
   $resultText.textContent = `${userChoice} vs ${computerChoice}. It is a DRAW!`;
+  addDrawGlow(userChoice);
 }
 
 function game(userChoice) {
