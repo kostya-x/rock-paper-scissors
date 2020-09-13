@@ -70,6 +70,7 @@ body {
 .result-text {
   color: #ffffff;
   font-size: 48px;
+  text-align: center;
   margin-top: 0;
   margin-bottom: 0;
 }
